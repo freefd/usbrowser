@@ -1,0 +1,30 @@
+chrome:
+  executable: google-chrome
+  urls:
+    google_meet:
+    - domain: meet.google.com
+firefox:
+  executable: firefox
+  urls:
+    my_social_network:
+    - domain_suffix: example.org
+    - domain_suffix: example.net
+    my_bank:
+    - domain_suffix: example.com
+firefox_in_the_example_container:
+  # Note, requires https://addons.mozilla.org/en-GB/firefox/addon/open-url-in-container/
+  executable: firefox
+  change_url: 
+    prefix: ext+container:name=Example&url=
+    transform_original_url:
+      - from: "&"
+        to: "%26"
+  urls:
+    slack:
+    - domain: my_site.slack.com
+    - domain: app.slack.com
+      path_start: client/A0123AAAA
+tor:
+  executable: torbrowser-launcher
+  urls:
+  - domain_suffix: onion
