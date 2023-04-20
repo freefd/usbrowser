@@ -23,7 +23,7 @@ jobs:
           (
             echo "GITHUB_REPO_NAME=$(echo "${GITHUB_REPOSITORY}" | cut -d/ -f2)"
             echo "VERSION=$(echo "${GITHUB_REF_NAME}" | sed -e 's/^v//')"
-            echo 'DEPENDS="python3, python3-urllib3, python3-yaml"'
+            echo 'DEPENDS=python3, python3-urllib3, python3-yaml'
             echo "DESCRIPTION=usbrowser is a URL Specific Browser-launcher."
             echo "DEB_ARCHITECTURE=${ARCHITECTURE:-all}"
             echo "RPM_ARCHITECTURE=${ARCHITECTURE:-noarch}"
