@@ -1,10 +1,15 @@
-chrome:
+default:
+  executable: chromium
+  arguments_list:
+    "--profile-directory": Default
+  arguments_delimiter: '='
+chrome-browser:
   executable: google-chrome
   urls:
     google_meet:
     - domain: meet.google.com
-firefox:
-  executable: firefox
+librewolf:
+  executable: librewolf
   urls:
     my_social_network:
     - domain_suffix: example.org
