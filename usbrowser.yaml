@@ -29,7 +29,7 @@ firefox_in_the_example_container:
     - domain: my_site.slack.com
     - domain: app.slack.com
       path_start: client/A0123AAAA
-tor:
+torbrowser:
   executable: torbrowser-launcher
   urls:
   - domain_suffix: onion

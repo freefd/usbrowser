@@ -32,7 +32,7 @@ def dbus_notification(**kwargs: str) -> None:
 
     # https://specifications.freedesktop.org/notification-spec/latest/ar01s09.html#command-notify
     notify_interface.Notify(
-        'usbrowser', # app_name
+        '', # app_name
         0, # replaces_id
         '', # app_icon
         kwargs['summary'], # summary
@@ -42,7 +42,7 @@ def dbus_notification(**kwargs: str) -> None:
         3000
     )
 
-    logging.info('[USBROWSER] Notification: [%s], [%s], [%s]',
+    logging.info('[USBROWSER] Notification urgency: [%s], summary: [%s], message: [%s]',
                     kwargs['urgency'], kwargs['summary'], repr(kwargs['body']))
 
 
@@ -218,11 +218,11 @@ if __name__ == '__main__':
                     logging.debug(
                         '[USBROWSER] Matching domain `%s` with '
                         'match_url_domain `%s` or match_url_domain_end `%s`',
-                        parsed.netloc, match_url_domain, match_url_domain_end
+                        parsed.hostname, match_url_domain, match_url_domain_end
                     )
 
-                    if (parsed.netloc == match_url_domain or
-                        parsed.netloc.endswith(match_url_domain_end) or
+                    if (parsed.hostname == match_url_domain or
+                        parsed.hostname.endswith(match_url_domain_end) or
                         (match_url_domain == '..EMPTY..'
                             and match_url_domain_end == '..EMPTY..')):
                         logging.debug(
